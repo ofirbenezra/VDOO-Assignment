@@ -1,0 +1,25 @@
+<!--<div class="multiple-select-wrapper">-->
+  <!--<div class="selected-items-box">-->
+    <!--<span class="dropdown-icon"></span>-->
+    <!--<ul class="items-list">-->
+      <!--<li *ngFor="let option of options">-->
+        <!--<img [src]="option.imgSrc" [title]="option.label" [alt]="option.label" />-->
+      <!--</li>-->
+      <!--&lt;!&ndash;<span ng-show="(Airlines | filter: getSelectedItemsOnly).length > 3" title="See more selections..">...</span>&ndash;&gt;-->
+    <!--</ul>-->
+  <!--</div>-->
+  <!--<div class="list">-->
+    <!--<ul class="items-list">-->
+      <!--<li *ngFor="let option of options">-->
+        <!--<input type="checkbox" />-->
+        <!--<img [src]="option.imgSrc" [title]="option.label" [alt]="option.label" />-->
+        <!--<span>{{option.label}}</span>-->
+      <!--</li>-->
+    <!--</ul>-->
+  <!--</div>-->
+<!--</div>-->
+
+
+<select (change)="itemChange($event.target.value)">
+  <option *ngFor="let option of options" [value]="option.id">{{option.label}}</option>
+</select>

@@ -1,0 +1,9 @@
+.spotify-app {
+  //display: flex;
+  //flex-direction: column;
+  //justify-content: space-between;
+  padding-top: 20px;
+  display: grid;
+  grid-template-rows: 50px auto;
+  height: 100vh;
+}

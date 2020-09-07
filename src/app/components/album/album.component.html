@@ -1,0 +1,11 @@
+<div class="card" *ngIf="selectedAlbum">
+  <img class="img" [src]="selectedAlbum?.images[0]?.url" />
+  <div class="content">
+    <p class="name">Name: {{selectedAlbum?.name}}</p>
+    <p class="rel_date">Release date: {{selectedAlbum?.release_date | date : 'dd/MM/yy'}}</p>
+  </div>
+</div>
+
+<div *ngIf="!selectedAlbum" class="not-selected">
+  Album was not selected yet
+</div>
