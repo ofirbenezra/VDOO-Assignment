@@ -24,7 +24,11 @@ export class SpotifyAppComponent implements OnInit, OnDestroy {
       .subscribe((albums: Album[]) => {
         this.albums = albums;
         this.items = albums.map(album => {
-          return {id: album.id, label: album.name, imgSrc: album.href};
+          return {
+            id: album.id,
+            label: album.name,
+            imgSrc: album.images.length > 0 ? album.images[0].url : ''
+          };
         });
       }, this.errorHandler));
   }

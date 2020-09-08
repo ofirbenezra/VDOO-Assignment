@@ -1,4 +1,24 @@
+.reset-btn {
+  a {
+    color: #fff;
+    text-transform: uppercase;
+    text-decoration: none;
+    background: #60a3bc;
+    padding: 10px;
+    border-radius: 50px;
+    display: inline-block;
+    border: none;
+    transition: all 0.4s ease 0s;
+    cursor: pointer;
+    &:hover {
+      transition: all 0.4s ease 0s;
+    }
+  }
+}
+
 .search-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   margin-left: 1.5rem;
 }
 

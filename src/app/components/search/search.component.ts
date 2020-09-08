@@ -26,5 +26,9 @@ export class SearchComponent implements OnInit {
     this.albumChange.emit(album);
   }
 
+  resetSelection() {
+    alert('Reset');
+  }
+
 
 }

@@ -28,6 +28,7 @@ export class DropDownComponent implements OnInit {
   }
 
   itemChange(value: string) {
+    this.toggleDropDown();
     this.selectionChange.emit(value);
   }
 

@@ -9,7 +9,7 @@ import {map} from 'rxjs/operators';
 })
 export class SpotifyService {
   // tslint:disable-next-line: max-line-length
-  private readonly TOKEN: string = 'BQBeaYau99gRgxpwPV_ZyiehjvAnCD3dEYhBazqzd-o8mi-bF1P-HiVfE86SvVr5lC_095GRf-uR8ncDLrkEayoDZxeEOuvKwRtQusT0279Q2JR_KtU71D5gnj5kKyfaiZ1QUnZw80PTnLpONgnIvin-XDqGFAOpnLVzcB-jUBeVQmI';
+  private readonly TOKEN: string = 'BQCIHz8dlWiK5grjK1zWMDQEwzzjEiXrNCqEdxRGMD8oxXrPtY394pZWfzlYlvriJUzsH_bBVAEnmogiSpHP46758JLbgp6Ql-VYO7Upzo4YtiUl3-WKjWoH2VCznzax2afsW_3mJGnpxKkyJiGLK8Eh7xGPaMX3kJw8BBxbv3rxxro';
   private readonly DATA_URL: string = 'https://api.spotify.com/v1/artists/';
 
   constructor(private httpClient: HttpClient) {
