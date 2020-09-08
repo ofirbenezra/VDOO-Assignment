@@ -1,6 +1,21 @@
-.multiple-select-wrapper {
+.dd-wrapper {
   width: 250px;
   position: relative;
+  .placeholder {
+    position: absolute;
+    top: 7px;
+    transition: top 0.2s;
+    touch-action: manipulation;
+    left: 11px;
+    &.hide {
+      //position: absolute;
+      //top: -19px;
+      //font-size: 12px;
+      //color: #1ED760;
+      //letter-spacing: 0.02em;
+      display: none;
+    }
+  }
   .selected-items-box {
     box-shadow: inset 1px -1px 5px 0 #CCCCCC;
     -webkit-box-shadow: inset 1px -1px 5px 0 #CCCCCC;
@@ -27,16 +42,22 @@
 
 .selected-items-box .items-list li {
   display: inline;
+  :hover {
+    background-color: red;
+  }
 }
+
 .selected-items-box .items-list li img {
   display: inline;
   padding-left: 10px;
   height: 18px;
 }
+
 .selected-items-box .items-list li img {
   font-size: 20px;
 }
-.multiple-select-wrapper .list {
+
+.dd-wrapper .list {
   //display: none;
   height: 250px;
   overflow-y: auto;
@@ -52,12 +73,14 @@
   -webkit-border-radius: 5px;
   -o-border-radius: 5px;
 }
+
 .list .items-list {
   list-style-type: none;
   width: 100%;
   padding: 0;
   margin: 0;
 }
+
 .list .items-list li {
   margin: 0;
   width: 100%;
@@ -67,18 +90,22 @@
   background-color: #fff;
   cursor: pointer;
 }
+
 .list .items-list li input {
   padding-left: 10px;
 }
+
 .list .items-list li img {
   padding-left: 10px;
   padding-right: 6px;
   height: 18px;
 }
+
 .list .items-list li span {
   color: #4A4A4A;
   font-size: 14px;
 }
+
 .dropdown-icon {
   position: absolute;
   top: 40%;
@@ -87,7 +114,8 @@
   width: 25px;
   height: 25px;
 }
+
 .title {
   color: black;
-  background-color:black;
+  background-color: black;
 }

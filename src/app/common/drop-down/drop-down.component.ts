@@ -32,5 +32,10 @@ export class DropDownComponent implements OnInit {
     this.selectionChange.emit(value);
   }
 
+  get showPlaceHolder(): boolean {
+    return this.isOpen;// || Boolean(this.selected);
+  }
+
+
 
 }
