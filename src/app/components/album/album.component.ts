@@ -7,8 +7,11 @@ import {Album} from '../../models/spotify.models';
   styleUrls: ['./album.component.scss']
 })
 export class AlbumComponent implements OnInit {
-
+  /**
+   * @type {Album} Input selected album
+   */
   @Input() selectedAlbum: Album;
+
   constructor() { }
 
   ngOnInit() {

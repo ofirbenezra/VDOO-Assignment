@@ -13,10 +13,24 @@ export interface DropDownItem {
 })
 export class DropDownComponent implements OnInit {
 
+  /**
+   * @type {Array<DropDownItem>} Input array of options for drop down
+   */
   @Input() options: Array<DropDownItem> = [];
-  @Input() placeHolderText = '';
+  /**
+   * @type {string} Input selected value for display
+   */
   @Input() selectedValue = '';
-  @Output() selectionChange = new EventEmitter<any>();
+  @Input() placeHolderText = '';
+
+  /**
+   * @type {string} Input drop down background color
+   */
+  @Input() backgroundColor: string = '#fff';
+  /**
+   * {string} Output callback for when the selection changes
+   */
+  @Output() selectionChange = new EventEmitter<string>();
 
   isOpen = false;
   constructor() { }

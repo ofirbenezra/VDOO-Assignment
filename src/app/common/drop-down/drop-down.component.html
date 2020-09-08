@@ -1,4 +1,4 @@
-<div class="dd-wrapper">
+<div class="dd-wrapper" [ngStyle]="{'backgroundColor': backgroundColor}">
   <div class="placeholder"
        [class.hide]="showValue" (click)="toggleDropDown()">{{selectedValue}}</div>
   <div class="selected-item-box" (click)="toggleDropDown()">
