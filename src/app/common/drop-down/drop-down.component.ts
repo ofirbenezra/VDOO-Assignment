@@ -16,6 +16,7 @@ export class DropDownComponent implements OnInit {
   @Input() options: Array<DropDownItem> = [];
   @Input() placeHolderText = '';
   @Output() selectionChange = new EventEmitter<any>();
+  selectedValue = '';
 
   isOpen = false;
   constructor() { }
@@ -29,11 +30,12 @@ export class DropDownComponent implements OnInit {
 
   itemChange(value: string) {
     this.toggleDropDown();
+    this.selectedValue = value;
     this.selectionChange.emit(value);
   }
 
   get showPlaceHolder(): boolean {
-    return this.isOpen;// || Boolean(this.selected);
+    return this.isOpen && this.selectedValue === '';;
   }
 
 
