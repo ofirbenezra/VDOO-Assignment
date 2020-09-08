@@ -4,7 +4,7 @@
 
 Demo can be viewed here https://vdoo-assignment.web.app/
 
-## Instructions
+## Dev instructions
 
 1. git clone https://github.com/ofirbenezra/VDOO-Assignment.git
 2. run 'npm install'
