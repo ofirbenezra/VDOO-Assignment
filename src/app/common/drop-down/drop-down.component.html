@@ -1,6 +1,4 @@
 <div class="dd-wrapper">
-  <!--<div class="placeholder"-->
-       <!--[class.hide]="showPlaceHolder" (click)="toggleDropDown()">{{placeHolderText}}</div>-->
   <div class="placeholder"
        [class.hide]="showValue" (click)="toggleDropDown()">{{selectedValue}}</div>
   <div class="selected-item-box" (click)="toggleDropDown()">
@@ -22,7 +20,7 @@
   <div class="list" *ngIf="isOpen">
     <ul class="items-list">
       <li *ngFor="let option of options" (click)="itemChange(option.id, option.label)">
-        <img [src]="option.imgSrc" [title]="option.label" [alt]="option.label" />
+        <img *ngIf="option.imgSrc" [src]="option.imgSrc" [title]="option.label" [alt]="option.label" />
         <span>{{option.label}}</span>
       </li>
     </ul>

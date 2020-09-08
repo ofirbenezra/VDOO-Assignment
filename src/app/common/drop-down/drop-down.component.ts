@@ -3,7 +3,7 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 export interface DropDownItem {
   id: string;
   label: string;
-  imgSrc: string;
+  imgSrc?: string;
 }
 
 @Component({
@@ -32,10 +32,6 @@ export class DropDownComponent implements OnInit {
     this.toggleDropDown();
     this.selectedValue = label;
     this.selectionChange.emit(id);
-  }
-
-  get showPlaceHolder(): boolean {
-    return this.isOpen && this.selectedValue !== '';
   }
 
   get showValue(): boolean {
