@@ -2,10 +2,11 @@
   <vdoo-drop-down
     [placeHolderText]="'Search for Bruno MARS albums'"
     [options]="items"
+    [selectedValue]="selectedAlbumName"
     (selectionChange)="albumSelected($event)">
   </vdoo-drop-down>
   <!--<button class="reset-btn">Reset</button>-->
-  <div class="reset-btn" (click)="resetSelection()">
+  <div class="reset-btn" (click)="resetAlbumSelection()">
     <a>Reset</a>
   </div>
 </div>

@@ -3,6 +3,7 @@ import {Album} from '../../models/spotify.models';
 import {Subscription} from 'rxjs';
 import {SpotifyService} from '../../services/spotify.service';
 import {DropDownItem} from '../../common/drop-down/drop-down.component';
+import {globals} from '../../consts';
 
 @Component({
   selector: 'vdoo-spotify-app',
@@ -15,6 +16,8 @@ export class SpotifyAppComponent implements OnInit, OnDestroy {
   albums: Array<Album> = [];
   private subscriptions: Subscription[] = [];
   album: Album;
+  selectedAlbumName: string;
+
 
   constructor(private spotifyService: SpotifyService) {
   }
@@ -30,6 +33,7 @@ export class SpotifyAppComponent implements OnInit, OnDestroy {
             imgSrc: album.images.length > 0 ? album.images[0].url : ''
           };
         });
+        this.getSelectedAlbumFromStorage();
       }, this.errorHandler));
   }
 
@@ -38,7 +42,36 @@ export class SpotifyAppComponent implements OnInit, OnDestroy {
 
 
   albumSelected(album: DropDownItem) {
-    this.album = this.albums.find(a => a.id === album.id);
+    if(album) {
+      this.album = this.albums.find(a => a.id === album.id)
+      this.saveLocalStorage(album.id);
+    }
+  }
+
+  resetSelection() {
+    localStorage.removeItem(globals.SELECTED_ALBUM_ID);
+    this.album = null;
+    this.selectedAlbumName = '';
+  }
+
+
+  private saveLocalStorage(id: string) {
+    if (id) {
+      localStorage.setItem(globals.SELECTED_ALBUM_ID, id);
+    } else {
+      localStorage.removeItem(globals.SELECTED_ALBUM_ID);
+    }
+  }
+
+  private getSelectedAlbumFromStorage() {
+    const val = localStorage.getItem(globals.SELECTED_ALBUM_ID);
+    if(val) {
+      const album = this.albums.find(item => item.id === val);
+      if(album) {
+        this.album = album;
+        this.selectedAlbumName = album.name;
+      }
+    }
   }
 
   ngOnDestroy(): void {
