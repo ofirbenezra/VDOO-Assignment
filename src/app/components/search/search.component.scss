@@ -4,7 +4,7 @@
     text-transform: uppercase;
     text-decoration: none;
     background: #60a3bc;
-    padding: 10px;
+    padding: 8px;
     border-radius: 50px;
     display: inline-block;
     border: none;
@@ -18,12 +18,19 @@
 
 .search-wrapper {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: auto 170px;
+  grid-column-gap: 10px;
   margin-left: 1.5rem;
 }
 
 @media (max-width: 767px) {
   .search-wrapper {
     margin-left: 1.5rem;
+    grid-template-columns: auto 100px;
   }
+  //.reset-btn {
+  //  a {
+  //    padding: 2px;
+  //  }
+  //}
 }

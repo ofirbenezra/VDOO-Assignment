@@ -9,7 +9,7 @@
 }
 
 .card {
-  width: calc(33.333% - 3rem);
+  width: calc(40% - 3rem);
   margin: 0 1.5rem;
   box-shadow: 0 3px 10px #666;
 }
@@ -18,15 +18,15 @@
   width: 100%;
 }
 .content {
-  padding: 1rem;
+  padding: 0.5rem;
 }
 .name {
-  font-size: 1.75rem;
+  font-size: 1.5rem;
   text-align: center;
 }
 
 .rel_date {
-  font-size: 1.25rem;
+  font-size: 1rem;
   text-align: center;
 }
 

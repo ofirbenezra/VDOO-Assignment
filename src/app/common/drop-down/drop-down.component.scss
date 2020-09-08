@@ -1,5 +1,4 @@
 .dd-wrapper {
-  width: 250px;
   position: relative;
   .placeholder {
     position: absolute;
@@ -7,12 +6,12 @@
     transition: top 0.2s;
     touch-action: manipulation;
     left: 11px;
+    opacity: 0.5;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 90%;
     &.hide {
-      //position: absolute;
-      //top: -19px;
-      //font-size: 12px;
-      //color: #1ED760;
-      //letter-spacing: 0.02em;
       display: none;
     }
   }
@@ -75,7 +74,7 @@
       }
 
       input {
-        padding-left: 10p
+        padding-left: 10px;
       }
 
       img {
