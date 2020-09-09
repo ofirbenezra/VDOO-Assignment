@@ -1,7 +1,7 @@
 <div class="dd-wrapper" [ngStyle]="{'backgroundColor': backgroundColor}">
   <div class="placeholder"
-       [class.hide]="showValue" (click)="toggleDropDown()">{{selectedValue}}</div>
-  <div class="selected-item-box" (click)="toggleDropDown()">
+       [class.hide]="showValue" (click)="toggleDropDown($event)">{{selectedValue}}</div>
+  <div class="selected-item-box" (click)="toggleDropDown($event)">
     <span class="dropdown-icon">
        <svg xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -19,7 +19,7 @@
   </div>
   <div class="list" *ngIf="isOpen">
     <ul class="items-list">
-      <li *ngFor="let option of options" (click)="itemChange(option.id, option.label)">
+      <li *ngFor="let option of options" (click)="itemChange($event, option.id, option.label)">
         <img *ngIf="option.imgSrc" [src]="option.imgSrc" [title]="option.label" [alt]="option.label" />
         <span>{{option.label}}</span>
       </li>

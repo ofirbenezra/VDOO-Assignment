@@ -9,7 +9,10 @@ export interface DropDownItem {
 @Component({
   selector: 'vdoo-drop-down',
   templateUrl: './drop-down.component.html',
-  styleUrls: ['./drop-down.component.scss']
+  styleUrls: ['./drop-down.component.scss'],
+  host: {
+    "(window:click)": "onWindowClick()"
+  }
 })
 export class DropDownComponent implements OnInit {
 
@@ -38,18 +41,23 @@ export class DropDownComponent implements OnInit {
   ngOnInit() {
   }
 
-  toggleDropDown() {
+  toggleDropDown(event: MouseEvent) {
+    event.stopPropagation();
     this.isOpen = !this.isOpen;
   }
 
-  itemChange(id: string, label: string) {
-    this.toggleDropDown();
+  itemChange(event: MouseEvent, id: string, label: string) {
+    this.toggleDropDown(event);
     this.selectedValue = label;
     this.selectionChange.emit(id);
   }
 
   get showValue(): boolean {
     return this.selectedValue === '';
+  }
+
+  onWindowClick() {
+    this.isOpen = false;
   }
 
 }
